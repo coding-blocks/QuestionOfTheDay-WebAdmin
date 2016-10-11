@@ -10,8 +10,10 @@ Router.map(function() {
   this.route('questions', function() {
     this.route('index', {path: '/'});
     this.route('add');
-
   });
+  this.route('about');
+  this.route('login');
+
 });
 
 export default Router;

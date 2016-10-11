@@ -15,7 +15,17 @@
     {{content-for "head-footer"}}
   </head>
   <body>
-    {{content-for "body"}}
+  <center>
+    <h1>Question of the Day</h1>
+  </center>
+  <div class="ui three item menu">
+    <a id="nav-about" class="item" href="/about">About</a>
+    <a id="nav-questions" class="item" href="/questions">Questions</a>
+    <a id="nav-login" class="item" href="/login">Login</a>
+  </div>
+
+
+  {{content-for "body"}}
 
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/cbqotd.js"></script>
