@@ -1,3 +1,11 @@
 .question-preview-card {
   width: 100% !important;
 }
+
+.question-preview-card > label {
+  padding: 10px;
+}
+
+.body {
+  padding: 3em 6em;
+}
