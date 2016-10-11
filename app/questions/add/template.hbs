@@ -1,2 +1,56 @@
 {{outlet}}
 <h2> Add Question </h2>
+<div class="ui form">
+    <div class="field question">
+        <label>Question (Markdown Supported)</label>
+      {{textarea value=question cols="80" rows="6"}}
+    </div>
+    <div class="field answer-option-one">
+        <label>Option 1</label>
+        {{input type=text value=option1}}
+    </div>
+    <div class="field answer-option-two">
+        <label>Option 2</label>
+      {{input type=text value=option2}}
+    </div>
+    <div class="field answer-option-three">
+        <label>Option 3</label>
+      {{input type=text value=option3}}
+    </div>
+    <div class="field answer-option-four">
+        <label>Option 4</label>
+      {{input type=text value=option4}}
+    </div>
+</div>
+<div class="ui card" local-class="question-preview-card">
+    <label>Question Preview</label>
+    <div class="ui content question-preview">
+  {{markdown-to-html question}}
+    </div>
+    <div class="ui content">
+        <div class="field">
+            <div class="ui radio checkbox">
+                <input name="answer-option" checked="" tabindex="0" class="hidden" type="radio">
+                <label>{{markdown-to-html option1}}</label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui radio checkbox">
+                <input name="answer-option" tabindex="0" class="hidden" type="radio">
+                <label>{{markdown-to-html option2}}</label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui radio checkbox">
+                <input name="answer-option" tabindex="0" class="hidden" type="radio">
+                <label>{{markdown-to-html option3}}</label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui radio checkbox">
+                <input name="answer-option" tabindex="0" class="hidden" type="radio">
+                <label>{{markdown-to-html option4}}</label>
+            </div>
+        </div>
+    </div>
+</div>

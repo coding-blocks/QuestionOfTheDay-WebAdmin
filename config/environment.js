@@ -4,6 +4,13 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'cbqotd',
     environment: environment,
+    firebase: {
+      apiKey: "AIzaSyDgvPIECVvBcrGymziSm8dNZFX4qFrcKHQ",
+      authDomain: "cbqotd-f0d1d.firebaseapp.com",
+      databaseURL: "https://cbqotd-f0d1d.firebaseio.com",
+      storageBucket: "",
+      messagingSenderId: "380345378617"
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
