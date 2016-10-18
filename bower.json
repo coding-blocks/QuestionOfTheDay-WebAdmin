@@ -1,11 +1,24 @@
 {
   "name": "cbqotd",
+  "homepage": "https://github.com/championswimmer/cbqotd",
+  "authors": [
+    "Arnav Gupta <arnav@codingblocks.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "ember": "~2.8.0",
-    "ember-cli-shims": "0.1.1",
-    "semantic-ui": "^2.2.4",
+    "parse": "^1.9.2",
     "jquery": "^3.1.1",
-    "firebase": "^3.0.0",
-    "showdown": "^1.4.3"
+    "semantic": "semantic-ui#^2.2.4",
+    "marked": "^0.3.6",
+    "x-tag-core": "^1.5.11"
   }
 }

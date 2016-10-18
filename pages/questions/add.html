@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Question</title>
+
+    <script src="/bower_components/parse/parse.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/semantic/dist/semantic.js"></script>
+    <script src="/bower_components/marked/marked.min.js"></script>
+    <script src="add.js"></script>
+    <link href="/bower_components/semantic/dist/semantic.css" rel="stylesheet">
+
+</head>
+<body style="padding: 20px">
+<form id="question-form" class="ui form">
+    <h2> Add Question </h2>
+    <div>
+        <div class="field question">
+            <label>Question (Markdown Supported)</label>
+            <textarea name="question" cols="80" rows="6"></textarea>
+        </div>
+        <div class="field answer-option-one">
+            <label>Option 1</label>
+            <input type=text name=option1>
+        </div>
+        <div class="field answer-option-two">
+            <label>Option 2</label>
+            <input type=text name=option2>
+        </div>
+        <div class="field answer-option-three">
+            <label>Option 3</label>
+            <input type=text name=option3>
+        </div>
+        <div class="field answer-option-four">
+            <label>Option 4</label>
+            <input type=text name=option4>
+        </div>
+    </div>
+    <div class="ui card" local-class="question-preview-card">
+        <div style="padding: 5px;">Question Preview</div>
+        <div class="ui content question-preview">
+
+        </div>
+        <div class="ui content">
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" value="1" name="answer">
+                    <label id="answer-option-1">
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" value="2" name="answer">
+                    <label id="answer-option-2">
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" value="3" name="answer">
+                    <label id="answer-option-3">
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" value="4" name="answer">
+                    <label id="answer-option-4">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui buttons">
+        <input type="submit" class="ui positive button">Submit</input>
+        <div class="or"></div>
+        <input type="reset" class="ui button">Reset</input>
+    </div>
+</form>
+</body>
+</html>
