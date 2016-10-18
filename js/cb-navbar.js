@@ -4,7 +4,6 @@
 xtag.register('cb-navbar', {
     lifecycle: {
         created: function () {
-            console.log('Created');
         }
     },
     content: function () {/*
@@ -16,7 +15,7 @@ xtag.register('cb-navbar', {
          <a href="/pages/questions/add.html" target="content" class="item">
          Add
          </a>
-         <a href="/pages/login" class="item right">
+         <a href="/pages/login" target="content" class="item right">
          Login
          </a>
          </div>

@@ -3,6 +3,5 @@
  */
 
 $(function () {
-    Parse.initialize("yE4lpdHmxauOKRs4O4cRopxBr9r8QyOwgTURlrV7");
-    Parse.serverURL = 'https://parseapi.back4app.com/'
-})
+
+});

@@ -27,29 +27,31 @@ $(function () {
     var prevOpt3 = $('#answer-option-3');
     var prevOpt4 = $('#answer-option-4');
 
-    $('textarea[name="question"]').on('change keydown paste', function () {
+    $('textarea[name="question"]').on('change keyup paste', function () {
         questionPreview.html(marked($(this).val()))
     })
 
-    qOpt1.on('change keydown paste', function () {
+    qOpt1.on('change keyup paste', function () {
         prevOpt1.html(marked($(this).val()))
     })
-    qOpt2.on('change keydown paste', function () {
+    qOpt2.on('change keyup paste', function () {
         prevOpt2.html(marked($(this).val()))
     })
-    qOpt3.on('change keydown paste', function () {
+    qOpt3.on('change keyup paste', function () {
         prevOpt3.html(marked($(this).val()))
     })
-    qOpt4.on('change keydown paste', function () {
+    qOpt4.on('change keyup paste', function () {
         prevOpt4.html(marked($(this).val()))
     })
 
     $('#question-form').submit(function (ev) {
+        ev.preventDefault();
+
         var formData = $(this).serializeArray();
         var questionObj = {};
         questionObj.options = [];
         $.each(formData, function () {
-            if (this.name == 'question') questionObj.quesion = this.value
+            if (this.name == 'question') questionObj.question = this.value
             if (this.name == 'option1') questionObj.options[0] = {option: this.value}
             if (this.name == 'option2') questionObj.options[1] = {option: this.value}
             if (this.name == 'option3') questionObj.options[2] = {option: this.value}
@@ -58,10 +60,23 @@ $(function () {
 
         var answers = [];
         $('input[name="answer"]:checked').each(function () {
-            questionObj.options[parseInt($(this).val())].correct = true;
+            questionObj.options[parseInt($(this).val()) - 1].correct = true;
         });
 
-        console.log(questionObj);
-        ev.preventDefault();
+        var question = new DB.Models.Question();
+        question.set("question", questionObj.question);
+        question.set("options", questionObj.options);
+        
+        console.log(question);
+
+        question.save(null, {
+            success: function () {
+                console.log('Question saved');
+            },
+            error: function () {
+
+            }
+        })
+
     })
 })

@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <title>Add Question</title>
 
-    <script src="/bower_components/parse/parse.min.js"></script>
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        Parse = parent.Parse;
+        DB = parent.DB;
+        if (typeof(jQuery) == "undefined") {
+            window.jQuery = function (selector) { return parent.jQuery(selector, document); };
+            jQuery = parent.$.extend(jQuery, parent.$);
+            window.$ = jQuery;
+        }
+    </script>
     <script src="/bower_components/semantic/dist/semantic.js"></script>
     <script src="/bower_components/marked/marked.min.js"></script>
     <script src="add.js"></script>
     <link href="/bower_components/semantic/dist/semantic.css" rel="stylesheet">
+
 
 </head>
 <body style="padding: 20px">
@@ -74,9 +82,9 @@
         </div>
     </div>
     <div class="ui buttons">
-        <input type="submit" class="ui positive button">Submit</input>
+        <input type="submit" class="ui positive button" value="Submit">
         <div class="or"></div>
-        <input type="reset" class="ui button">Reset</input>
+        <input type="reset" class="ui button">Reset
     </div>
 </form>
 </body>
