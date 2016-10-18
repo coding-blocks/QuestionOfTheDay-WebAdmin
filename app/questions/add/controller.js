@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   actions: {
     addQuestion() {
       let question = new Question('WOW');
-      ParseAdapter.createRecord('Question', question, function (obj, err) {
+      ParseAdapter.createRecord(question.className, question, function (obj, err) {
         console.log(obj + 'Saved');
       });
     }
