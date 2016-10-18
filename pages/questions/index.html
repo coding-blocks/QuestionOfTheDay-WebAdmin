@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <title>Questions</title>
 
-    <script src="/bower_components/parse/parse.min.js"></script>
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        Parse = parent.Parse;
+        DB = parent.DB;
+        if (typeof(jQuery) == "undefined") {
+            window.jQuery = function (selector) { return parent.jQuery(selector, document); };
+            jQuery = parent.$.extend(jQuery, parent.$);
+            window.$ = jQuery;
+        }
+    </script>
     <script src="/bower_components/semantic/dist/semantic.js"></script>
     <link href="/bower_components/semantic/dist/semantic.css" rel="stylesheet">
 

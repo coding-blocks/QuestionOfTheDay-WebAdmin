@@ -1,0 +1,44 @@
+<link rel="import" href="/bower_components/polymer/polymer-mini.html">
+
+<dom-module id="cb-navbar">
+    <template>
+        <div class="ui tabular menu">
+            <a href="/pages/questions" target="content" class="active item">
+                Questions
+            </a>
+            <a href="/pages/questions/add.html" target="content" class="item">
+                Add
+            </a>
+            <a href="/pages/login" target="content" class="item right">
+                Login
+            </a>
+        </div>
+    </template>
+    <script>
+        $(function () {
+            $('.item').click(function () {
+                $('.item').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+        Polymer({
+            is: 'cb-navbar',
+            created: function () {
+
+            },
+            ready: function () {
+
+            },
+            attached: function () {
+
+            },
+            detached: function () {
+
+            }
+        })
+    </script>
+</dom-module>
+
+
+
+
