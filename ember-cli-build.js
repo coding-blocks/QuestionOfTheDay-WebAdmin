@@ -6,9 +6,6 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
   });
-
-  app.import('bower_components/parse/parse.js');
-
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //

@@ -7,14 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('sign', function() {
-    this.route('in', {path: '/'});
-    this.route('in');
-    this.route('up');
-  });
-  this.route('questions', function() {
+  this.route('question', function() {
     this.route('index', {path: '/'});
     this.route('add');
+  });
+  this.route('signin', function() {
+    this.route('signup');
   });
 });
 
