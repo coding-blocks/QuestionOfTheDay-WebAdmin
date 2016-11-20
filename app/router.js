@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('add');
   });
   this.route('signin', function() {
+    this.route('index', {path: '/'});
     this.route('signup');
   });
 });

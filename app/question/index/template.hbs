@@ -1,1 +1,11 @@
 {{outlet}}
+
+<div class="ui big relaxed">
+{{#each quesList as |ques|}}
+
+  <div class="ui big relaxed raised segment">
+  {{#question-preview ques=ques onDeleteQues=(action "didDeleteQuestion")}}{{/question-preview}}
+  </div>
+
+{{/each}}
+</div>

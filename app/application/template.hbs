@@ -1,18 +1,12 @@
 <div class="ui stackable grid">
     <div class="four wide column"></div>
     <div class="eight wide column">
-        <div class="ui top attached tabular menu">
 
-          {{#link-to "question.index" class="item"}}Question{{/link-to}}
-          {{#link-to "question.add" class="item"}}Add {{/link-to}}
-          {{#link-to "signin" class="item right"}}Signin{{/link-to}}
-
-
-        </div>
-      {{outlet}}
-
+      {{#top-nav}}
+        {{outlet}}
+      {{/top-nav}}
     </div>
+
     <div class="four wide column"></div>
 </div>
-
 
