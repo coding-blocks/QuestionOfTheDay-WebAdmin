@@ -20,5 +20,23 @@ export default Parse.User.extend(
           }
         });
       }.bind(this));
+    },
+    doSignup(u, p, e) {
+      "use strict";
+      let user = new this();
+      user.set("username", u);
+      user.set("password", p);
+      user.set("email", e);
+
+      return new Promise((resolve, reject) => {
+        user.signUp(null, {
+          success: (user) => {
+            resolve(user);
+          },
+          error: (user, err) => {
+            reject(user, err);
+          }
+        });
+      });
     }
   });
