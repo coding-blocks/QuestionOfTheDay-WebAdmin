@@ -1,2 +1,22 @@
-Main Sign in page
+<div class="ui centered grid card">
+    <form class="ui centered huge form column">
+        <div class=" ui input">
+          {{input type="text" placeholder="username" value=username}}
+        </div>
+        <div class="ui input">
+          {{input type="password" placeholder="password" value=password}}
+        </div>
+      <br><br>
+        <div class="ui huge buttons">
+            {{#link-to "signin.signup" class="ui grey button" }}Sign Up{{/link-to}}
+            <div class="or"></div>
+            <input type="button" {{action "login" username password}}
+                   class="ui orange button" value="Sign In">
+        </div>
+    </form>
+
+</div>
 {{outlet}}
+
+{{signin.success-modal}}
+{{signin.failure-modal}}

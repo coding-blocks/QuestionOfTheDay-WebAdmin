@@ -1,0 +1,19 @@
+<i class="close icon"></i>
+<div class="header">Login Failure</div>
+<div class="content">
+    <p>Username and/or Password is Wrong</p>
+    <p>Are you sure you have an account ?</p>
+</div>
+{{yield}}
+<div class="actions">
+    <div class="ui right">
+        <div class="ui orange button" {{action "no"}}>
+            <i class="recycle icon"></i>
+            Retry
+        </div>
+        <div class="ui grey button" {{action 'yes'}}>
+            <i class="signup icon"></i>
+            Signup
+        </div>
+    </div>
+</div>

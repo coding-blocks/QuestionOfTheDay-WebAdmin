@@ -3,7 +3,8 @@
     "document",
     "window",
     "-Promise",
-    "Parse"
+    "Parse",
+    "$"
   ],
   "browser": true,
   "boss": true,

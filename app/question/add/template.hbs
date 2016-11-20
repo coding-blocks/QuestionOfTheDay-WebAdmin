@@ -23,29 +23,50 @@
           {{input value=option4}}
         </div>
     </div>
-    <div class="ui card" local-class="question-preview-card">
-        <div style="padding: 5px;">Question Preview</div>
-        <div class="ui content question-preview">
-            {{markdown-to-html question}}
-        </div>
-        <div class="ui content">
-            <div class="ui checkbox">
-                {{input type="checkbox" checked=opt1}}
-              <label>{{markdown-to-html option1}}</label>
-            </div>
-            <div class="ui checkbox">
-              {{input type="checkbox" checked=opt2}}
-                <label>{{markdown-to-html option2}}</label>
-            </div>
-            <div class="ui checkbox">
-              {{input type="checkbox" checked=opt3}}
-                <label>{{markdown-to-html option3}}</label>
-            </div>
-            <div class="ui checkbox">
-              {{input type="checkbox" checked=opt4}}
-                <label>{{markdown-to-html option4}}</label>
-            </div>
-        </div>
+    <div class="ui segment" style="padding: 10px" local-class="question-preview-card">
+      <div class="ui relaxed divided list">
+          <div style="padding: 5px;">Question Preview</div>
+
+          <div class="item">
+              <div class="content">
+                  <div class="question-preview">
+                    {{markdown-to-html question}}
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="content">
+                  <div class="ui checkbox">
+                    {{input type="checkbox" checked=opt1}}
+                      <label> {{markdown-to-html option1}}</label>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="content">
+                  <div class="ui checkbox item">
+                    {{input type="checkbox" checked=opt2}}
+                      <label> {{markdown-to-html option2}}</label>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="content">
+                  <div class="ui checkbox item">
+                    {{input type="checkbox" checked=opt3}}
+                      <label> {{markdown-to-html option3}}</label>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="content">
+                  <div class="ui checkbox item">
+                    {{input type="checkbox" checked=opt4}}
+                      <label> {{markdown-to-html option4}}</label>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
     <div class="ui buttons">
         <input {{action "submitQuestion"}} type="submit" class="ui positive button" value="Submit">
@@ -53,6 +74,14 @@
         <input type="reset" class="ui button">Reset
     </div>
 </form>
+
+<div class="ui modal login success">
+    <div class="content"> WOW </div>
+</div>
+
+<div class="ui modal login fail">
+    <div class="content">SHIT</div>
+</div>
 
 
 
