@@ -11,7 +11,8 @@ export default Ember.Controller.extend({
         {option: this.get('option2'), correct: this.get('opt2')},
         {option: this.get('option3'), correct: this.get('opt3')},
         {option: this.get('option4'), correct: this.get('opt4')},
-      ]).then(function (q) {
+      ],
+      Parse.User.current()).then(function (q) {
         console.log(q);
       });
     }
