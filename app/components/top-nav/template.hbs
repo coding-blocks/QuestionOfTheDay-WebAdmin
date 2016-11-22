@@ -2,10 +2,10 @@
 
   {{#link-to "question.index" class="item"}}Question{{/link-to}}
   {{#link-to "question.add" class="item"}}Add {{/link-to}}
-  {{#if signedin}}
-  {{#link-to "signin.signout" class="item right"}}Sign Out{{/link-to}}
+  {{#if user.currentUser}}
+    {{#link-to "signin.signout" class="item right"}}Sign Out{{/link-to}}
   {{else}}
-  {{#link-to "signin" class="item right"}}Sign In{{/link-to}}
+    {{#link-to "signin" class="item right"}}Sign In{{/link-to}}
   {{/if}}
 
 
