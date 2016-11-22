@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+const Promise = Ember.RSVP.Promise;
+
 export default Parse.User.extend(
   {
     //protoProps

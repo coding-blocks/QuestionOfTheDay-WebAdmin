@@ -6,8 +6,8 @@ export default UiModal.extend({
 
   actions: {
     yes: function() {
-      console.log('yes');
-      alert('yes');
+      console.log('login-failure -> signup');
+      // alert('yes');
       this.execute('hide');
     },
 
