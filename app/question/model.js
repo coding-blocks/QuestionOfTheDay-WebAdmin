@@ -22,14 +22,15 @@ const QuestionClass = Parse.Object.extend("Question",
         });
       });
     },
-    addNew: function(q, optArr, author) {
+    addNew: function(q, optArr, author, tags) {
       "use strict";
       let ques = new this();
       return new Promise ((resolve, reject) => {
         ques.save({
           question: q,
           options: optArr,
-          author: author
+          author: author,
+          tags: tags
         }, {
           success: (obj) => {
             resolve(obj);

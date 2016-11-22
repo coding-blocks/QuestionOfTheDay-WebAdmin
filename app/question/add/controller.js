@@ -14,7 +14,8 @@ export default Ember.Controller.extend({
       ],
       Parse.User.current()).then(function (q) {
         console.log(q);
-      });
+      },
+      this.get('qTags').split(','));
     }
   }
 });
