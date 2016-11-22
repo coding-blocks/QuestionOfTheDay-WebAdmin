@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('signin', function() {
     this.route('index', {path: '/'});
     this.route('signup');
+    this.route('signout');
   });
 });
 
