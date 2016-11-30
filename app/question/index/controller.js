@@ -20,6 +20,10 @@ export default Ember.Controller.extend({
     didDeleteQuestion () {
       "use strict";
       refreshQuestions(this);
+    },
+    didEditQuestion(questionId) {
+      "use strict";
+      this.transitionToRoute('question.edit', questionId);
     }
   }
 });

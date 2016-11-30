@@ -37,6 +37,29 @@ const QuestionClass = Parse.Object.extend("Question",
         });
       });
     },
+    upsert: function (id, q, optArr, author, tags) {
+      "use strict";
+      if (!id) {
+        return this.addNew(q, optArr, author, tags);
+      }
+      let ques = new this();
+      return new Promise ((resolve, reject) => {
+        ques.save({
+          objectId: id,
+          question: q,
+          options: optArr,
+          author: author,
+          tags: tags
+        }, {
+          success: (obj) => {
+            resolve(obj);
+          },
+          error: (obj, error) => {
+            reject(obj, error);
+          }
+        });
+      });
+    },
     addNew: function(q, optArr, author, tags) {
       "use strict";
       let ques = new this();

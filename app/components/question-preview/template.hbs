@@ -1,7 +1,7 @@
 {{yield}}
 <div class="ui big clearing">
   {{#if usermode}}
-      <button class="ui right floated icon button">
+      <button {{action "editQuestion" ques}} class="ui right floated icon button">
           <i class="edit icon"></i>
       </button>
       <button {{action "deleteQuestion" ques}} class="ui right floated icon button">

@@ -10,7 +10,15 @@ export default Ember.Component.extend({
     this.addObserver("q", this, function(controller,key) {
       $('#question-editor').show();
       this.set('question',this.q.question);
-
+      this.set('option1', this.q.options[0].option);
+      this.set('option2', this.q.options[1].option);
+      this.set('option3', this.q.options[2].option);
+      this.set('option4', this.q.options[3].option);
+      this.set('opt1', this.q.options[0].correct);
+      this.set('opt2', this.q.options[1].correct);
+      this.set('opt3', this.q.options[2].correct);
+      this.set('opt4', this.q.options[3].correct);
+      this.set('qTags', this.q.tags.join(','));
     });
   },
   didRender: function() {
@@ -31,8 +39,8 @@ export default Ember.Component.extend({
   actions : {
     submitQuestion () {
       "use strict";
-      console.log(this.get('opt1'));
-      Question.addNew(this.get('question'), [
+      Question.upsert(this.get('questionId'),
+        this.get('question'), [
           {option: this.get('option1'), correct: this.get('opt1')},
           {option: this.get('option2'), correct: this.get('opt2')},
           {option: this.get('option3'), correct: this.get('opt3')},

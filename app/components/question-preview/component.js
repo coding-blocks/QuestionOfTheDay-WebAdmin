@@ -14,6 +14,10 @@ export default Ember.Component.extend({
       console.log(ques);
       ques.destroy();
       this.get("onDeleteQues")();
+    },
+    editQuestion(ques) {
+      "use strict";
+      this.get("onEditQues")(ques.id);
     }
   }
 });
