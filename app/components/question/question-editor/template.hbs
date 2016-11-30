@@ -1,0 +1,89 @@
+<form id="question-form" class="ui form">
+    <h2> Add Question </h2>
+    <div>
+        <div class="field question">
+            <label>Question (Markdown Supported)</label>
+          {{textarea value=question cols=80 rows=6 name="question"}}
+        </div>
+        <div class="field answer-option-one">
+            <label>Option 1</label>
+          {{input value=option1}}
+        </div>
+        <div class="field answer-option-two">
+            <label>Option 2</label>
+          {{input value=option2}}
+        </div>
+        <div class="field answer-option-three">
+            <label>Option 3</label>
+          {{input value=option3}}
+        </div>
+        <div class="field answer-option-four">
+            <label>Option 4</label>
+          {{input value=option4}}
+        </div>
+    </div>
+    <div class="ui segment" style="padding: 10px" local-class="question-preview-card">
+        <div class="ui relaxed divided list">
+            <div style="padding: 5px;">Question Preview</div>
+
+            <div class="item">
+                <div class="content">
+                    <div class="question-preview">
+                      {{markdown-to-html question}}
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <div class="ui checkbox">
+                      {{input type="checkbox" checked=opt1}}
+                        <label> {{markdown-to-html option1}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <div class="ui checkbox item">
+                      {{input type="checkbox" checked=opt2}}
+                        <label> {{markdown-to-html option2}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <div class="ui checkbox item">
+                      {{input type="checkbox" checked=opt3}}
+                        <label> {{markdown-to-html option3}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <div class="ui checkbox item">
+                      {{input type="checkbox" checked=opt4}}
+                        <label> {{markdown-to-html option4}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="field item">
+      {{input type="text" placeholder="Tags (Comma separated)" value=qTags}}
+
+    </div>
+    <div class="ui buttons">
+        <input {{action "submitQuestion"}} type="submit" class="ui positive button" value="Submit">
+        <div class="or"></div>
+        <input type="reset" class="ui button">Reset
+    </div>
+</form>
+
+<div class="ui modal login success">
+    <div class="content"> WOW </div>
+</div>
+
+<div class="ui modal login fail">
+    <div class="content">SHIT</div>
+</div>
+
+{{yield}}

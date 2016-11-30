@@ -3,8 +3,10 @@ import Question from 'cbqotd/question/model';
 
 function refreshQuestions (ctrl) {
   "use strict";
+  $('#question-loader').addClass('active');
   Question.getAll().then(function (results) {
     ctrl.set('quesList', results);
+    $('#question-loader').removeClass('active');
   });
 }
 
