@@ -7,6 +7,21 @@ const QuestionClass = Parse.Object.extend("Question",
 
   },
   {
+    findById(id) {
+      "use strict";
+      let query = new Parse.Query(this);
+
+      return new Promise((resolve, reject) => {
+        query.get(id,{
+          success: (result) => {
+            resolve(result);
+          },
+          error: (error) => {
+            reject(error);
+          }
+        });
+      });
+    },
     getAll: function () {
       "use strict";
       let query = new Parse.Query(this);

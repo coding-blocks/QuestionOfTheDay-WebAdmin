@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('question', function() {
     this.route('index', {path: '/'});
     this.route('add');
+    this.route('edit', {path: '/edit/:id'});
   });
   this.route('signin', function() {
     this.route('index', {path: '/'});

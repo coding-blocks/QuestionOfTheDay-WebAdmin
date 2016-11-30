@@ -3,6 +3,31 @@ import Question from 'cbqotd/question/model';
 
 
 export default Ember.Component.extend({
+  elementId: 'question-editor',
+  init () {
+    "use strict";
+    this._super(...arguments);
+    this.addObserver("q", this, function(controller,key) {
+      $('#question-editor').show();
+      this.set('question',this.q.question);
+
+    });
+  },
+  didRender: function() {
+    console.log('didRender');
+    if (this.get('questionId')) {
+      if (!this.get('q')) {
+        $('#question-editor').hide();
+        Question.findById(this.get('questionId')).then(function (q) {
+          "use strict";
+          console.log(q.toJSON());
+          this.set('q', q.toJSON());
+        }.bind(this));
+      }
+    }
+
+  },
+
   actions : {
     submitQuestion () {
       "use strict";
