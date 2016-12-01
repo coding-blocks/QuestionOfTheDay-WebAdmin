@@ -5,8 +5,8 @@ function refreshQuestions (ctrl) {
   "use strict";
   $('#question-loader').addClass('active');
   Question.getAll().then(function (results) {
+    console.log(results);
     ctrl.set('quesList', results);
-    $('#question-loader').removeClass('active');
   });
 }
 

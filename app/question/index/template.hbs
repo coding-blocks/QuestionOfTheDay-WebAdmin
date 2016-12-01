@@ -1,15 +1,17 @@
 {{outlet}}
 <div class="ui big relaxed">
 
-    <div class="ui active loader" id="question-loader"></div>
+  {{#unless quesList}}
+    <div class="ui active loader"></div>
+  {{/unless}}
 {{#each quesList as |ques|}}
 
   <div class="ui big relaxed raised segment">
-  {{#question-preview ques=ques
+  {{#question.question-preview ques=ques
                       onEditQues=(action "didEditQuestion")
                       onDeleteQues=(action "didDeleteQuestion")}}
 
-                      {{/question-preview}}
+                      {{/question.question-preview}}
   </div>
 
 {{/each}}

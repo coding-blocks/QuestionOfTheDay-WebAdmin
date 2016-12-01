@@ -18,11 +18,10 @@ export default Ember.Component.extend({
       this.set('opt2', this.q.options[1].correct);
       this.set('opt3', this.q.options[2].correct);
       this.set('opt4', this.q.options[3].correct);
-      this.set('qTags', this.q.tags.join(', '));
+      this.set('qTags', this.q.tags ? this.q.tags.join(', ') : "");
     });
   },
   didRender: function() {
-    console.log('didRender');
     if (this.get('questionId')) {
       if (!this.get('q')) {
         $('#question-editor').hide();
