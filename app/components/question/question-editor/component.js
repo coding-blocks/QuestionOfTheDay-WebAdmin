@@ -18,7 +18,7 @@ export default Ember.Component.extend({
       this.set('opt2', this.q.options[1].correct);
       this.set('opt3', this.q.options[2].correct);
       this.set('opt4', this.q.options[3].correct);
-      this.set('qTags', this.q.tags.join(','));
+      this.set('qTags', this.q.tags.join(', '));
     });
   },
   didRender: function() {
@@ -47,7 +47,7 @@ export default Ember.Component.extend({
           {option: this.get('option4'), correct: this.get('opt4')},
         ],
         Parse.User.current(),
-        this.get('qTags').split(',')
+        this.get('qTags').split(/\s*,\s*/)
       ).then(function (q) {
         console.log(q);
       });
