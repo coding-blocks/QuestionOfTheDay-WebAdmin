@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   beforeModel : function (transition) {
     "use strict";
     Parse.User.logOut();
-    this.get('user').loggedOut();
+    this.set('user.loggedIn', false);
     transition.abort();
     this.transitionTo('index');
   }

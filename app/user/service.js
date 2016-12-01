@@ -1,13 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  currentUser : null,
-  loggedIn (user) {
+  loggedIn: false,
+  currentUser : Ember.computed('loggedIn', function () {
     "use strict";
-    this.set('currentUser', user);
-  },
-  loggedOut () {
-    "use strict";
-    this.set('currentUser', null);
-  }
+    console.log('Compute currentUser');
+    let parseUser = Parse.User.current();
+    if (parseUser) {
+      this.set('loggedIn', true);
+      return parseUser;
+    } else {
+      this.set('loggedIn', false);
+      return null;
+    }
+  })
 });

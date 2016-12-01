@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
       User.doLogin(u,p).then(function (user) {
         "use strict";
           $('.ui.login-success.small.modal').modal('show');
-        this.get('user').loggedIn(Parse.User.current());
+        this.set('user.loggedIn', true);
       }.bind(this), function (user, err) {
         "use strict";
         $('.ui.login-fail.small.modal').modal('show');
