@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import TransitionToListenerRoute from 'ember-cli-routing-service/routes/transition-to-listener';
 
-export default Ember.Route.extend({
+export default TransitionToListenerRoute.extend({
+
 });

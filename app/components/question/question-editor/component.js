@@ -4,6 +4,7 @@ import Question from 'cbqotd/question/model';
 
 export default Ember.Component.extend({
   elementId: 'question-editor',
+  routing: Ember.inject.service(),
   init () {
     "use strict";
     this._super(...arguments);
@@ -27,7 +28,6 @@ export default Ember.Component.extend({
         $('#question-editor').hide();
         Question.findById(this.get('questionId')).then(function (q) {
           "use strict";
-          console.log(q.toJSON());
           this.set('q', q.toJSON());
         }.bind(this));
       }
@@ -48,8 +48,8 @@ export default Ember.Component.extend({
         Parse.User.current(),
         this.get('qTags').split(/\s*,\s*/)
       ).then(function (q) {
-        console.log(q);
-      });
+        this.get('routing').transitionTo('question');
+      }.bind(this));
     }
   }
 });
