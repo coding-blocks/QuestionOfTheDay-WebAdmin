@@ -16,6 +16,7 @@
 npm-debug.log
 testem.log
 .idea/workspace.xml
+.idea/terminal.xml
 .idea/tasks.xml
 .idea/dictionaries
 .idea/vcs.xml
