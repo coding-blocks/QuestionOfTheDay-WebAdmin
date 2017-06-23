@@ -1,6 +1,7 @@
 {{yield}}
 <div class="ui big clearing">
   {{#if usermode}}
+{{#if user.isAdmin}}
       <button {{action "editQuestion" ques}} class="ui right floated icon button">
           <i class="edit icon"></i>
       </button>
@@ -8,7 +9,7 @@
           <i class="delete icon"></i>
       </button>
   {{/if}}
-
+{{/if}}
   <div>
   {{markdown-to-html q.question}}
   </div>
